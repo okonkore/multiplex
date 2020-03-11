@@ -24,13 +24,28 @@ class Point {
   public void setZ(float z) {
     this.z = z;
   }
-  
-  public float getDisplayX(){
-    return this.cx + (this.x - this.cx) / this.z;
+
+  public float getX() {
+    return this.x;
+  }
+  public float getY() {
+    return this.y;
   }
 
-  public float getDisplayY(){
-    return this.cy + (this.y - this.cy) / this.z;
+  public float getCy() {
+    return this.cy;
+  }
+  public float getCx() {
+    return this.cx;
+  }
+
+
+  public float getDisplayX() {
+    return this.cx + (this.x - this.cx) / sqrt(this.z);
+  }
+
+  public float getDisplayY() {
+    return this.cy + (this.y - this.cy) / sqrt(this.z);
   }
 
   public float getZ() {
